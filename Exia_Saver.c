@@ -79,13 +79,12 @@ void choice(int c) // début de la fonction permettant de choisir le screen save
 
             break;    //le cas 2 constitue le lançement du screen saver 2
         case 2 :
-            dynamique();    //Appel de la fonction  Dynamique
             WriteStats(2,"5x3"); // Appel de la fonction pour écrire les stats dans un  fichier txt ( créée si il n'existe pas)
-
+            dynamique();    //Appel de la fonction  Dynamique
             break;
         case 3:
             interactif();   // Appel de la fonction interactif
-            WriteStats(3, "meintenance");   // Appel de la fonction pour écrire les stats dans un  fichier txt ( créée si il n'existe pas)
+            WriteStats(3, "maintenance");   // Appel de la fonction pour écrire les stats dans un  fichier txt ( créée si il n'existe pas)
         }
 }
 
@@ -99,7 +98,7 @@ void WriteStats(int type, char tab[]) {
         time(&temps);
         date = *localtime(&temps);    // écrit l'heure dans le fichier
         strftime(format, 22, "%Y/%m/%d %X", &date);   //écrit la date dans le fichier
-        fprintf(fichier, "%s  type %d  %s\n", format, type, tab);   //écrit le type de fichier ainsi que le nom du fichier utilisé 
+        fprintf(fichier, "%s  type %d  %s\n", format, type, tab);   //écrit le type de fichier ainsi que le nom du fichier utilisé
         fclose(fichier);
     } else {
         printf("Un probleme est survenu avec le fonction stat");
