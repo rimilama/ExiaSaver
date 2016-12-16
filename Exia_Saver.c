@@ -7,6 +7,7 @@
 #include <string.h>
 #include "Dynamique.h"
 #include "Stats.h"
+#include "Interactif.h"
 
 int main(int argc, char *argv[])
 {
@@ -24,7 +25,7 @@ int main(int argc, char *argv[])
     }
     else{
     int a = 1;
-    int b = 2;
+    int b = 3;
     system("clear");
     int c = randm(a, b);
     choice(c);
@@ -81,7 +82,9 @@ void choice(int c)
             WriteStats(2,"5x3");
 
             break;
-
+        case 3:
+            interactif();
+            WriteStats(3, "meintenance");
         }
 }
 
