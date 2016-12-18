@@ -13,7 +13,9 @@ FILE* fichier_d = NULL;   //on crée un pointeru fichier_d pointant sur FILE(un 
 
 void dynamique()    //cette fonction est unpeu le main de ce programme
 {
-    int RefreshT = 6;   //valeur donnant le nombre de seconde avant d'actualisé l'horloge
+    int RefreshT;   //valeur donnant le nombre de seconde avant d'actualisé l'horloge
+    char* EXIASAVER2_SLEEP = getenv("EXIASAVER2_SLEEP");    //utilisation de la variables d'environneme,nt
+    RefreshT = atoi(EXIASAVER2_SLEEP);    //variable dutilisation mise dans le refresh
     int ctrlc = 0;    //valeur permettant de faire la boucle while à l'infini sauf ctrl+c
     int tab[8] = {0};   //initialisation du tableau qui va contenir les valeur le l'heure
     int a = 20,b = 20,c = 7,d = 13;   //initialisation des différents valeur qui permetterons de se possitionner dans le shell
